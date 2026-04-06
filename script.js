@@ -107,3 +107,37 @@ window.addEventListener('resize', () => {
 
 init();
 animate();
+const modalData = {
+    'os-modal': `
+        <h3>Operating Systems & Administration</h3>
+        <ul>
+            <li><strong>Linux Expert:</strong> Proficient in Ubuntu and Linux Mint environments[cite: 22].</li>
+            <li><strong>Administration:</strong> Completed "Linux Unhatched" (Cisco/NDG)[cite: 25, 34].</li>
+            <li><strong>Multi-boot:</strong> Experienced in managing complex Windows/Linux/macOS workflows for academic use[cite: 32].</li>
+        </ul>`,
+    'hw-modal': `
+        <h3>Hardware & Systems Experience</h3>
+        <ul>
+            <li><strong>PC Assembly:</strong> Specialist in configuring high-performance Intel i7 systems[cite: 31].</li>
+            <li><strong>PCB Design:</strong> Hands-on experience in PCB fabrication, from circuit etching to soldering[cite: 28, 29].</li>
+            <li><strong>Solar Energy:</strong> Former Intern at Shyam Energy; assisted in site surveys and equipment maintenance[cite: 8, 10].</li>
+        </ul>`,
+    'dev-modal': `
+        <h3>Software & Development</h3>
+        <ul>
+            <li><strong>Programming:</strong> Strong foundation in Embedded C and Basic VLSI Design[cite: 23].</li>
+            <li><strong>Tools:</strong> Proficient in version control using Git and GitHub[cite: 23].</li>
+            <li><strong>Future Focus:</strong> Currently transitioning into AI and software development through a BTech IT program[cite: 6, 12].</li>
+        </ul>`
+};
+
+function openModal(type) {
+    const overlay = document.getElementById('modal-overlay');
+    const body = document.getElementById('modal-body');
+    body.innerHTML = modalData[type];
+    overlay.classList.add('active');
+}
+
+function closeModal() {
+    document.getElementById('modal-overlay').classList.remove('active');
+}
